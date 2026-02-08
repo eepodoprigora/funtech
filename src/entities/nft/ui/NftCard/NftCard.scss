@@ -1,0 +1,108 @@
+@use "@/app/css/base/variables" as *;
+@use "@/app/css/utils/mixins" as *;
+
+.nft-card {
+	--p: 14px;
+	--br: 24px;
+	padding: var(--p);
+	border-radius: var(--br);
+	background-color: $white;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	@include tablet {
+		--p: 10px;
+		--br: 18px;
+	}
+}
+
+.nft-card__image {
+	--br: 24px;
+	--mb: 20px;
+	position: relative;
+	aspect-ratio: 1/1;
+	border-radius: var(--br);
+	overflow: hidden;
+	margin-bottom: var(--mb);
+
+	@include tablet {
+		--mb: 14px;
+	}
+}
+
+.nft-card__countdown {
+	--top: 28px;
+	--right: 25px;
+	position: absolute;
+	top: var(--top);
+	right: var(--right);
+	z-index: 2;
+
+	@include tablet {
+		--top: 20px;
+		--right: 22px;
+	}
+}
+
+.nft-card__title {
+	--mb: 20px;
+	margin-bottom: var(--mb);
+
+	@include tablet {
+		--mb: 14px;
+	}
+}
+
+.nft-card__info {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.nft-card__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: auto;
+}
+
+.nft-card__button {
+	white-space: nowrap;
+}
+
+.nft-card__bottom-left {
+	display: flex;
+	flex-direction: column;
+	max-width: 50%;
+}
+
+.nft-card__current-bid {
+	display: flex;
+	align-items: center;
+}
+
+.nft-card__current-bid-label {
+	--mb: 4px;
+	margin-bottom: var(--mb);
+	color: $light-6;
+}
+
+.nft-card__current-bid-icon {
+	--size: 22px;
+	--mr: 4px display: flex;
+	margin-right: var(--mr);
+	flex-shrink: 0;
+	width: var(--size);
+	height: var(--size);
+	background: url("/static/images/svg/bid.svg") no-repeat center / contain;
+
+	@include tablet {
+		--size: 16px;
+	}
+}
+
+.nft-card__current-bid-amount {
+	@include text-trim-fallback();
+}

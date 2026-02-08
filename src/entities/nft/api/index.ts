@@ -1,0 +1,1 @@
+export { getNftNames } from './get-nft-names'

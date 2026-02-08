@@ -1,0 +1,46 @@
+// transition timings
+
+$app-default-duration: 0.25s;
+
+$app-default-easing: cubic-bezier(0.25, 0.25, 0, 1);
+
+// Colors
+
+$black: #141416;
+$white: #ffffff;
+$light-1: #f9f9f9;
+$light-2: #f1f1f1;
+$light-3: #c5c5c5;
+$light-4: #d7d7d7;
+$light-5: #c3c3c3;
+$light-6: #94a3b8;
+$light-7: #fcfcfd;
+$light-8: #e6e8ec;
+$light-9: #b9b9b9;
+$light-10: #999999;
+
+$grey-1: #818181;
+$grey-2: #606060;
+$grey-3: #cbcbcb;
+
+$dark-1: #1c1d20;
+$dark-2: #0f0f0f;
+
+// Font settings
+$font-fallback:
+	"Inter",
+	system-ui,
+	-apple-system,
+	"Segoe UI",
+	Roboto,
+	"Helvetica Neue",
+	Arial,
+	"Noto Sans",
+	"Liberation Sans",
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol",
+	"Noto Color Emoji";
+$font-family: $font-fallback;
+$font-poppins: "Poppins", $font-fallback !default;

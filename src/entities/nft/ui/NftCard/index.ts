@@ -1,0 +1,1 @@
+export { NftCard, type RawProps as NftCardRawProps } from './NftCard'

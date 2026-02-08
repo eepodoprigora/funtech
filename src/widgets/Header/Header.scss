@@ -1,0 +1,241 @@
+@use "@/app/css/base/variables" as *;
+@use "@/app/css/utils/mixins" as *;
+
+.header {
+	--br: 20px;
+	height: var(--header-height);
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	border-bottom-left-radius: var(--br);
+	border-bottom-right-radius: var(--br);
+	width: 100vw;
+	overflow: hidden;
+	transition: background-color 0.8s $app-default-easing;
+	@include mobile {
+		--ph: 6px;
+		padding: 0 var(--ph);
+	}
+}
+
+.header--moved {
+	background-color: $white;
+}
+
+.header-sentinel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.header__left {
+	@include mobile {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.header__wrapper {
+	display: flex;
+	align-items: center;
+
+	@include mobile {
+		justify-content: space-between;
+	}
+}
+
+.header__logo {
+	--mr: 66px;
+	margin-right: var(--ml);
+	display: flex;
+	align-items: center;
+}
+
+.header__logo-img-container {
+	--size: 53px;
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+	display: flex;
+
+	@include tablet {
+		--size: 38px;
+	}
+
+	@include mobile {
+		--size: 46px;
+		--mr: 7px;
+		margin-right: var(--mr);
+	}
+}
+
+.header__logo-text {
+	display: none;
+	@include mobile {
+		display: block;
+	}
+}
+
+.header__nav {
+	@include mobile {
+		--pt: 150px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		transform: translateY(-100%);
+		transition: transform $app-default-easing 1.2s;
+
+		height: vh(100);
+		background-color: $light-1;
+		padding-top: var(--pt);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: var(--header-height);
+			left: var(--offset-x);
+			right: var(--offset-x);
+			background-color: $grey-3;
+			height: 1px;
+			transition: opacity $app-default-easing 0.6s 1s;
+		}
+
+		.burger--opened & {
+			transform: translateY(0);
+
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.header__nav-list {
+	--ml: 66px;
+	display: flex;
+	align-items: center;
+	margin-left: var(--ml);
+
+	@include tablet {
+		--ml: 40px;
+	}
+
+	@include mobile {
+		--ml: 30px;
+		--mr: 30px;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-right: var(--mr);
+		opacity: 0;
+		transform: translateY(30px);
+		transition:
+			opacity $app-default-easing 0.6s,
+			transform $app-default-easing 0.6s;
+		transition-delay: 0.4s;
+	}
+	.burger--opened & {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.header__nav-item {
+	--mr: 50px;
+
+	&:not(:last-child) {
+		margin-right: var(--mr);
+	}
+
+	@include tablet {
+		--mr: 32px;
+	}
+
+	@include mobile {
+		--mr: 0;
+		--mb: 20px;
+		margin-bottom: var(--mb);
+	}
+}
+
+.header__nav-link {
+	text-transform: uppercase;
+	color: $grey-2;
+}
+
+.header__burger {
+	--size: 40px;
+	--line-w: 32px;
+	--line-h: 2px;
+	--gap: 11px;
+	display: none;
+
+	width: var(--size);
+	height: var(--size);
+
+	place-items: center;
+	color: $black;
+	transition: transform $app-default-easing 0.8s;
+	position: relative;
+	z-index: 2;
+
+	@include mobile {
+		display: grid;
+	}
+
+	.burger--opened & {
+		transform: rotate(180deg);
+		.header__burger-lines {
+			background: transparent;
+		}
+
+		.header__burger-lines::before {
+			transform: rotate(45deg) scale(0.75);
+		}
+
+		.header__burger-lines::after {
+			transform: rotate(-45deg) scale(0.75);
+		}
+	}
+}
+
+.header__burger-lines {
+	position: relative;
+	width: var(--line-w);
+	height: var(--line-h);
+	background: currentColor;
+	border-radius: 999px;
+	transition: background-color $app-default-easing 0.6s;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: var(--line-h);
+		background: currentColor;
+		border-radius: 999px;
+		transform-origin: center;
+		transition: transform $app-default-easing 0.6s;
+	}
+
+	&::before {
+		transform: translateY(calc(var(--gap) * -1));
+	}
+
+	&::after {
+		transform: translateY(var(--gap));
+	}
+}
+
+.header__logo-text {
+	@include text-trim-fallback();
+}

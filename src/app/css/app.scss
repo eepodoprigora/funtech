@@ -1,0 +1,24 @@
+// base
+@use "base/custom-properties";
+@use "base/reset";
+@use "base/fonts";
+
+// atoms
+@use "layout/typography";
+@use "layout/common";
+
+// shared
+@use "@shared/ui/Icon/Icon.scss";
+@use "@shared/ui/Button/Button.scss";
+@use "@shared/ui/Countdown/Countdown";
+
+// entities
+@use "@entities/nft/ui/NftCard/NftCard.scss";
+
+// widgets
+@use "@widgets/Bids/Bids.scss";
+@use "@widgets/Header/Header.scss";
+@use "@widgets/Footer/Footer.scss";
+
+// pages
+@use "@pages/HomePage/HomePage.scss";

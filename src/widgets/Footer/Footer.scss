@@ -1,0 +1,130 @@
+@use "@/app/css/base/variables" as *;
+@use "@/app/css/utils/mixins" as *;
+
+.footer {
+	--pv: 87px;
+	padding: var(--pv) 0;
+	background-color: $black;
+
+	@include tablet {
+		--pv: 60px;
+	}
+
+	@include mobile {
+		--pv: 40px;
+	}
+}
+
+.footer__top {
+	--mb: 80px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin-bottom: var(--mb);
+
+	@include tablet {
+		--mb: 61px;
+	}
+
+	@include mobile {
+		--pt: 12px;
+		--mb: 74px;
+		padding-top: var(--pt);
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&:before {
+		--offset: 25px;
+		content: "";
+		position: absolute;
+		top: calc(100% + var(--offset));
+		width: 100%;
+		height: 1px;
+		background-color: rgba($grey-1, 0.25);
+
+		@include tablet {
+			--offset: 21px;
+		}
+		@include mobile {
+			--offset: 48px;
+		}
+	}
+}
+
+.footer__logo {
+	color: $white;
+	@include flex-center(row, inline);
+}
+
+.footer__logo-img-wrapper {
+	--size: 65px;
+	--mr: 10px;
+	display: flex;
+	margin-right: var(--mr);
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+
+	@include tablet {
+		--size: 46px;
+	}
+}
+
+.footer__logo-text {
+	@include text-trim-fallback();
+}
+
+.footer__nav {
+	@include flex-center(row, inline);
+}
+
+.footer__nav-link {
+	color: $light-9;
+
+	@include mobile {
+		text-transform: uppercase;
+	}
+}
+
+.footer__nav-list {
+	@include flex-center(row, inline);
+
+	@include mobile {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.footer__nav-item {
+	--mr: 70px;
+	display: flex;
+	&:not(:last-child) {
+		margin-right: var(--mr);
+	}
+
+	@include tablet {
+		--mr: 50px;
+	}
+
+	@include mobile {
+		--mr: 0;
+		--mt: 34px;
+		margin-top: var(--mt);
+	}
+}
+
+.footer__rights {
+	color: $light-10;
+	@include mobile {
+		text-align: center;
+	}
+}
+
+.footer__rights-add {
+	display: none;
+
+	@include mobile {
+		display: inline-block;
+	}
+}

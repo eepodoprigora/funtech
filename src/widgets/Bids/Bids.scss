@@ -1,0 +1,112 @@
+@use "@/app/css/base/variables" as *;
+@use "@/app/css/utils/mixins" as *;
+
+.bids {
+	--pv: 70px;
+	background-color: $light-2;
+	padding: var(--pv) 0;
+	overflow: clip;
+	@include tablet {
+		--pv: 50px;
+	}
+
+	@include desktop-large {
+		--pv: 90px;
+	}
+}
+
+.bids__title {
+	--mb: 70px;
+	margin-bottom: var(--mb);
+	color: $light-3;
+	text-align: center;
+
+	@include tablet {
+		--mb: 50px;
+	}
+	@include desktop-large {
+		--mb: 90px;
+	}
+}
+
+.bids__slider {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bids__viewport {
+	width: 100%;
+	overflow: visible;
+	padding-inline: calc((var(--w) + var(--slide-spacing)) / 2);
+}
+
+.bids__container {
+	--slide-spacing: 40px;
+	display: flex;
+	align-items: stretch;
+	margin-left: calc(var(--slide-spacing) * -1);
+	cursor: grab;
+	@include tablet {
+		--slide-spacing: 32px;
+	}
+}
+
+.bids__slide {
+	--card-w: 281px;
+	--w: calc(var(--card-w) + var(--slide-spacing));
+	flex: 0 0 var(--w);
+	padding-left: var(--slide-spacing);
+
+	@include tablet {
+		--card-w: 210px;
+	}
+
+	@include desktop-large {
+		--card-w: 300px;
+	}
+}
+
+.bids__nav {
+	--mt: 70px;
+	margin-top: var(--mt);
+	box-shadow: 0px 43px 34px -25.87px rgba($dark-2, 0.12);
+
+	@include tablet {
+		--mt: 50px;
+	}
+
+	@include desktop-large {
+		--mt: 90px;
+	}
+}
+
+.bids__nav-wrapper {
+	--br: 17px;
+
+	@include flex-center(row, inline);
+	border-radius: var(--br);
+	overflow: hidden;
+	color: $black;
+	position: relative;
+
+	&::before {
+		content: "";
+		--offset: 20px;
+		--w: 2px;
+		--br: 2px;
+		position: absolute;
+		top: var(--offset);
+		bottom: var(--offset);
+		width: var(--w);
+		background: $light-8;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: var(--br);
+
+		@include tablet {
+			--offset: 15px;
+		}
+	}
+}

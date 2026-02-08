@@ -1,0 +1,245 @@
+@use "@/app/css/utils/mixins" as *;
+@use "@/app/css/base/variables" as *;
+
+/* =========================
+   Global base
+========================= */
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-size-adjust: 100%;
+	font-size-adjust: 100%;
+}
+
+body {
+	@extend %text-default;
+}
+
+/* =========================
+   Base
+========================= */
+
+%text-default {
+	font-family: $font-fallback;
+	font-weight: 500;
+	line-height: 1.45;
+	font-size: 18px;
+
+	@include desktop-large {
+		font-size: 19px;
+		line-height: 1.5;
+	}
+
+	@include desktop-xl {
+		font-size: 20px;
+		line-height: 1.55;
+	}
+
+	@include desktop-xxl {
+		font-size: 21px;
+		line-height: 1.6;
+	}
+
+	@include tablet {
+		font-size: 14px;
+		line-height: 1.15;
+	}
+
+	@include mobile {
+		font-size: 40px;
+		line-height: 1.05;
+	}
+}
+
+.text-default-b {
+	@extend %text-default;
+
+	@include tablet {
+		font-size: 12.5px;
+	}
+
+	@include mobile {
+		font-size: 14px;
+	}
+}
+
+/* =========================
+   Heading
+========================= */
+
+%h2 {
+	font-family: $font-poppins;
+	font-weight: 600;
+	line-height: 1.05;
+	font-size: 46px;
+
+	@include desktop-large {
+		font-size: 50px;
+	}
+
+	@include desktop-xl {
+		font-size: 54px;
+	}
+
+	@include desktop-xxl {
+		font-size: 58px;
+	}
+
+	@include tablet {
+		@include responsive-font-size(30px, 32px, 768px, 1024px);
+		line-height: 1.125;
+	}
+
+	@include mobile {
+		font-size: 30px;
+		line-height: 1;
+	}
+}
+
+h2,
+.h2 {
+	@extend %h2;
+}
+
+%h3 {
+	font-family: $font-poppins;
+	font-weight: 600;
+	line-height: 1.09;
+	font-size: 22px;
+
+	@include desktop-large {
+		font-size: 24px;
+	}
+
+	@include desktop-xl {
+		font-size: 26px;
+	}
+
+	@include desktop-xxl {
+		font-size: 28px;
+	}
+
+	@include tablet {
+		font-size: 16px;
+	}
+}
+
+h3,
+.h3 {
+	@extend %h3;
+}
+
+/* =========================
+   Text
+========================= */
+
+%text-xl {
+	font-family: $font-poppins;
+	font-weight: 600;
+	line-height: 1.3;
+	font-size: 30px;
+
+	@include desktop-large {
+		font-size: 32px;
+	}
+
+	@include desktop-xl {
+		font-size: 34px;
+	}
+
+	@include desktop-xxl {
+		font-size: 36px;
+	}
+
+	@include tablet {
+		font-size: 22px;
+	}
+}
+
+.text-xl {
+	@extend %text-xl;
+}
+
+%text-l {
+	font-family: $font-poppins;
+	font-weight: 500;
+	line-height: 1.5;
+	font-size: 16px;
+
+	@include desktop-large {
+		font-size: 17px;
+	}
+
+	@include desktop-xl {
+		font-size: 18px;
+	}
+
+	@include desktop-xxl {
+		font-size: 19px;
+	}
+
+	@include tablet {
+		font-size: 12px;
+		line-height: 1.15;
+	}
+}
+
+.text-l {
+	@extend %text-l;
+}
+
+%text-m {
+	font-family: $font-poppins;
+	font-weight: 600;
+	line-height: 1.5;
+	font-size: 14px;
+
+	@include desktop-large {
+		font-size: 15px;
+	}
+
+	@include desktop-xl {
+		font-size: 16px;
+	}
+
+	@include desktop-xxl {
+		font-size: 17px;
+	}
+
+	@include tablet {
+		font-size: 11px;
+		line-height: 1.15;
+	}
+}
+
+.text-m {
+	@extend %text-m;
+}
+
+%text-xs {
+	font-family: $font-poppins;
+	font-weight: 400;
+	line-height: 1;
+	font-size: 14px;
+
+	@include desktop-large {
+		font-size: 15px;
+	}
+
+	@include desktop-xl {
+		font-size: 16px;
+	}
+
+	@include desktop-xxl {
+		font-size: 17px;
+	}
+
+	@include tablet {
+		font-size: 11px;
+	}
+}
+
+.text-xs {
+	@extend %text-xs;
+}

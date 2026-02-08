@@ -1,0 +1,47 @@
+@use "@/app/css/utils/mixins" as *;
+
+:root {
+	// оффсеты
+	--offset-x: 337px;
+
+	@include desktop-middle() {
+		--offset-x: 97px;
+	}
+
+	@include tablet() {
+		--offset-x: 68px;
+	}
+
+	@include mobile {
+		--offset-x: 24px;
+	}
+
+	--wrapper-max-width: 3840px;
+
+	//  хедер
+	--header-height: 145px;
+
+	@include tablet() {
+		--header-height: 104px;
+	}
+
+	@include mobile() {
+		--mobile-vh: 1vh;
+		--mobile-difference-minvh-vh: 0px;
+	}
+}
+
+// стабильная высота
+
+@supports (height: 100lvh) {
+	:root {
+		--mobile-vh: 1lvh;
+	}
+}
+
+.loading,
+.error {
+	text-align: center;
+	min-height: 30vh;
+	@include flex-center();
+}

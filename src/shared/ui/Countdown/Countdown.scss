@@ -1,0 +1,29 @@
+@use "@/app/css/base/variables" as *;
+@use "@/app/css/utils/mixins" as *;
+
+.countdown {
+	--width: 115px;
+	--br: 10px;
+	--pv: 10px;
+	--ph: 14px;
+
+	background: rgba($dark-1, 0.35);
+	border: 1px solid rgba($dark-1, 0.08);
+	display: flex;
+	white-space: nowrap;
+	backdrop-filter: blur(5px);
+	min-width: var(--width);
+	border-radius: var(--br);
+	color: $white;
+	padding: var(--pv) var(--ph);
+
+	box-shadow: 0 5px 15px rgba($dark-1, 0.08);
+
+	@include tablet {
+		--width: 82px;
+		--pv: 6px;
+		--ph: 10px;
+		--br: 7px;
+		font-size: 10px;
+	}
+}
