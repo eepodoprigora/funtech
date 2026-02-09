@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import classNames from "classnames"
 
-import { formatEndsIn } from "@shared/lib/time/format-duration"
+import { formatEndsIn } from "@shared/lib/time"
 
 type RawProps = {
 	endAt: number

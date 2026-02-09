@@ -2,7 +2,7 @@ import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
 
-import { FooterConfig } from "@shared/model/types"
+import { FooterConfig } from "@shared/model"
 import { Reveal } from "@shared/ui/Reveal"
 
 export type RawProps = FooterConfig

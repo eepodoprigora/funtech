@@ -1,4 +1,4 @@
-import { ImageShape } from "@shared/model/types"
+import { ImageShape } from "@shared/model"
 
 export interface INft {
     name: string

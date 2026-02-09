@@ -20,6 +20,7 @@ export const Button = ({
 	return (
 		<button
 			{...props}
+			type={type}
 			className={classNames("button", className, {
 				"button--icon-only": icon && !text,
 				"button--text-only": text && !icon,

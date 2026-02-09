@@ -1,6 +1,3 @@
-
-
-
 export type CommonPageProps = {
     headerData: HeaderConfig;
     footerData: FooterConfig;

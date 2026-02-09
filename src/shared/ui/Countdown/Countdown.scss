@@ -2,7 +2,7 @@
 @use "@/app/css/utils/mixins" as *;
 
 .countdown {
-	--width: 115px;
+	--width: 117px;
 	--br: 10px;
 	--pv: 10px;
 	--ph: 14px;
@@ -10,9 +10,10 @@
 	background: rgba($dark-1, 0.35);
 	border: 1px solid rgba($dark-1, 0.08);
 	display: flex;
+	overflow: hidden;
 	white-space: nowrap;
 	backdrop-filter: blur(5px);
-	min-width: var(--width);
+	width: var(--width);
 	border-radius: var(--br);
 	color: $white;
 	padding: var(--pv) var(--ph);

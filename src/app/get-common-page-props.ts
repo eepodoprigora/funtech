@@ -1,4 +1,4 @@
-import { CommonPageProps } from '@/shared/model/types';
+import { CommonPageProps } from '@/shared/model';
 import { tp } from '@shared/lib/formatting';
 
 export const getCommonPageProps = async (): Promise<CommonPageProps> => {

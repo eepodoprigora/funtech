@@ -8,9 +8,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useMediaQuery } from "usehooks-ts"
 
-import { useBodyClass } from "@shared/lib/hooks/use-body-class"
-import { useHeaderScrolled } from "@shared/lib/hooks/use-header-scrolled"
-import { HeaderConfig } from "@shared/model/types"
+import { useBodyClass, useHeaderScrolled } from "@shared/lib/hooks"
+import { HeaderConfig } from "@shared/model"
 
 export type RawProps = HeaderConfig
 

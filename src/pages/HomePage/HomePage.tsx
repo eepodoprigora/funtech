@@ -3,10 +3,9 @@
 import { AnimatePresence, m } from "motion/react"
 import { useEffect } from "react"
 
-import { mapNamesToCards, nftActions } from "@entities/nft"
-import { getNftNames } from "@entities/nft/api"
-import { API_STATE } from "@shared/api/const"
-import { useAppDispatch, useAppSelector } from "@shared/model/hooks"
+import { useAppDispatch, useAppSelector } from "@app/store"
+import { getNftNames, mapNamesToCards, nftActions } from "@entities/nft"
+import { API_STATE } from "@shared/api"
 import { Bids, BidsRawProps } from "@widgets/Bids"
 
 type RawProps = {

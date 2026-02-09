@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
 import { getCommonPageProps } from "@app/get-common-page-props"
-import { Providers } from "@shared/lib/providers"
+import { Providers } from "@app/providers"
 import { Footer } from "@widgets/Footer"
 import { Header } from "@widgets/Header"
 

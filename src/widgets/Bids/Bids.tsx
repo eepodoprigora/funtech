@@ -4,7 +4,7 @@ import { m, useInView } from "motion/react"
 import { useEffect, useRef, useState } from "react"
 
 import { INft, NftCard } from "@entities/nft"
-import { useSlider } from "@shared/lib/hooks/use-slider"
+import { useSlider } from "@shared/lib/hooks"
 import { Button } from "@shared/ui/Button"
 import Icon from "@shared/ui/Icon"
 

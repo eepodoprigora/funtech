@@ -1,4 +1,4 @@
-import { API_STATE, type ApiState } from "@shared/api/const";
+import { API_STATE, type ApiState } from "@shared/api";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type NftState = {

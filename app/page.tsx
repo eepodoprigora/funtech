@@ -1,5 +1,3 @@
-import { current } from "@reduxjs/toolkit"
-
 import { HomePage } from "@pages/HomePage"
 import { getIndexGeneralInfo } from "@shared/api/get-index-general"
 

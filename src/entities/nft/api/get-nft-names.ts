@@ -1,4 +1,4 @@
-import { API_URL } from "@shared/api/const";
+import { API_URL } from "@shared/api";
 
 
 export const getNftNames = async (limit = 12): Promise<string[]> => {
